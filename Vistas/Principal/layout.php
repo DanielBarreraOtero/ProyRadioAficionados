@@ -5,7 +5,6 @@ if (!Login::UsuarioEstaLogueado() && !Login::UsuarioRecordado($con)) {
 }
 // Dependiendo de el rol que tenga (invitado, usuario-normal, usuario-admin)
 // Le aparecerá un menú de usuario diferente (invitado o usuario) y 
-// Podrá acceder a unas páginas o a otras (esto se comprobaría en enruta)
 ?>
 <!DOCTYPE html>
 <html lang="en">

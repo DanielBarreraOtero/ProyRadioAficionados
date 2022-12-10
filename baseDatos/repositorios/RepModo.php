@@ -1,5 +1,7 @@
 <?php
 
+use Masterminds\HTML5\Elements;
+
 class RepModo
 {
 
@@ -48,6 +50,25 @@ class RepModo
             }
 
             return $modos;
+        } catch (PDOException $e) {
+            throw $e;
+        }
+    }
+
+    public function existeModo(string $nombre)
+    {
+        $query = "SELECT id FROM modo where nombre = '$nombre'";
+
+        $resul = $this->con->query($query);
+
+        try {
+            $resul = $resul->fetch(PDO::FETCH_ASSOC);
+
+            if (isset($resul['id'])) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (PDOException $e) {
             throw $e;
         }

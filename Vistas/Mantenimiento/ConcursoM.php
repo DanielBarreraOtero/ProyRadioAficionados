@@ -3,7 +3,7 @@ require_once '../../cargadores/autoloader.php';
 $con = GBD::getConnection("localhost", "radioaficionadosbdnew");
 
 if (Sesion::leer('rol') !== 'admin') {
-    header('location:?menu=denegado');
+    header('location: ../error/denegado.php');
 }
 
 ?>

@@ -58,6 +58,12 @@
         margin-right: 2%;
     }
 
+    &__btnBorrar{
+        width: 80px;
+        background-color: red;
+        border-radius: 5px;
+    }
+
     &__table {
         width: 100%;
 
@@ -115,6 +121,7 @@
         & td,
         th {
             border: 1px solid $FithColor;
+            vertical-align: middle;
         }
 
     }
