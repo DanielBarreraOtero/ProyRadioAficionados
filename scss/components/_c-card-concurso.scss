@@ -1,0 +1,68 @@
+.c-card-concurso {
+    width: 250px;
+    height: 300px;
+    background-color: $ThirdColor;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &:hover {
+        border: 3px solid pink;
+    }
+
+    &__foto {
+        flex-basis: 45%;
+        overflow: hidden;
+
+        background-image: url('../imgs/descarga (2).jfif');
+
+    }
+
+    &__body {
+        padding: 5px 5px;
+        background-color: transparent;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        &>*{
+            margin: 3px 0px;
+        }
+    }
+
+    &__titulo {
+        flex-basis: 100%;
+        font-size: larger;
+        font-weight: 700;
+    }
+
+    &__premio {
+        flex-basis: 50%;
+        font-size: large;
+        font-weight: 500;
+    }
+
+    &__miembros {
+        flex-basis: 50%;
+        font-size: large;
+        font-weight: 500;
+        text-align: right;
+    }
+
+    &__desc {
+        flex-basis: 100%;
+        font-size: large;
+        font-weight: 600;
+        text-align: justify;
+        color: $FithColor--ligth;
+    }
+
+    &__time {
+        margin-top: 15px;
+        flex-basis: 100%;
+        font-size: larger;
+        font-weight: 700;
+        text-align: center;
+    }
+}

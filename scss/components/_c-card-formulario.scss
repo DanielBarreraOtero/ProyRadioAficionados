@@ -1,0 +1,127 @@
+.c-card-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &__titulo {
+        flex: 1 1 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        color: $FithColor;
+    }
+
+
+    &__spacer {
+        flex: 1 1 100%;
+        text-align: center;
+        margin: 7px;
+        color: $FithColor;
+    }
+
+    &__bloqueM {
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        gap: 4px;
+        margin: 5px 0;
+    }
+
+    &__bloqueL {
+        @mixin c-card-formulario__bloqueL{
+            flex-basis: 80%;
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            gap: 4px;
+            margin: 10px 0;
+        }
+        @include c-card-formulario__bloqueL;
+
+        &--row {
+            @include c-card-formulario__bloqueL;
+            flex-direction: row;
+            align-items: baseline;
+            gap: 15px;
+        }
+    }
+
+    &__bloqueBtn {
+        margin-top: 10px;
+        flex-basis: 87%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__bloqueCheck {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin: 10px 0;
+    }
+
+    &__input {
+
+        &--registro {
+            height: 30px;
+            background-color: $ThirdColor;
+            border: 2px solid $FithColor--ligth;
+            border-radius: 15px;
+        }
+    }
+
+    &__tArea {
+        height: 150px;
+        background-color: $ThirdColor;
+        border: 2px solid $FithColor--ligth;
+        border-radius: 15px;
+    }
+
+    &__date {
+        height: 30px;
+        width: 45%;
+        text-align: center;
+        background-color: $ThirdColor;
+        border: 2px solid $FithColor--ligth;
+        border-radius: 15px;
+    }
+
+    &__check {
+
+        &--registro {
+            margin-top: 1px;
+        }
+    }
+
+    &__label {
+
+        &--registro {
+            color: $FithColor;
+        }
+    }
+}
+
+.--registro {
+    padding: 15px;
+    width: 40%;
+    height: fit-content;
+    background-color: $ThirdColor--dark;
+}
+
+.--login {
+    padding: 15px;
+    width: 30%;
+    height: fit-content;
+    background-color: $ThirdColor--dark;
+}
+
+.--concurso {
+    padding: 15px;
+    width: 60%;
+    height: fit-content;
+    background-color: $FirstColor;
+}

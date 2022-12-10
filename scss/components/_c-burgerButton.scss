@@ -1,0 +1,53 @@
+.c-burgerButton {
+    padding: 0;
+    margin-left: 15px;
+    flex-basis: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    border: none;
+
+    display: flex;
+
+    &__icon {
+        fill: $ThirdColor;
+        
+    }
+    
+    &__linea--first {
+        transition: ease-in 300ms;
+        transform-origin: center;
+    }
+    
+    &__linea--first--pulsado {
+        transition: ease-in 300ms, rotate ease-in 300ms 300ms;
+        transform-origin: center;
+
+        fill: $FourthColor;
+        rotate: 90deg;
+    }
+
+    &__linea--second {
+        transition: ease-in 300ms 100ms;
+        transform-origin: center;
+    }
+
+    &__linea--second--pulsado {
+        transition: ease-in 300ms;
+        transform-origin: center;
+
+        fill: $FourthColor;
+    }
+
+    &__linea--third {
+        transition: ease-in 300ms;
+        transform-origin: center;
+    }
+
+    &__linea--third--pulsado {
+        transition: ease-in 300ms, rotate ease-in 300ms 300ms;
+        transform-origin: center;
+
+        fill: $FourthColor;
+        rotate: 90deg;
+    }
+}

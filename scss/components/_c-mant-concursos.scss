@@ -1,0 +1,121 @@
+.c-mant {
+    width: 100%;
+    min-height: 90vh;
+    height: auto;
+    background-color: $ThirdColor--dark;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__boxL {
+        @mixin c-mant__boxL{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        @include c-mant__boxL();
+
+        &--row {
+            @mixin c-mant__boxL--row{
+                @include c-mant__boxL();
+                flex-direction: row;
+            }
+            @include c-mant__boxL--row;
+            
+            &--opposite {
+                @include c-mant__boxL--row();
+                margin: 0;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__boxBandas{
+        flex-basis: 60%;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__boxModos{
+        flex-basis: 30%;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__newBtn{
+        align-self: flex-end;
+        margin-right: 2%;
+    }
+
+    &__table {
+        width: 100%;
+
+        background-color: $ThirdColor;
+        border-spacing: 0;
+        border-collapse: separate;
+        border-radius: 20px;
+        border: 3px solid $FithColor;
+        overflow: hidden;
+
+        &__head-row {
+            overflow: hidden;
+
+            &>* {
+                padding: 10px 5px;
+                font-weight: 600;
+
+            }
+
+            & :first-child {
+                border-radius: 15px 0 0 0;
+            }
+
+            & :last-child {
+                border-radius: 0 15px 0 0;
+            }
+        }
+
+        &__body-row {
+            overflow: hidden;
+            text-align: center;
+
+            &>* {
+                color: $FithColor--ligth;
+                padding: 5px 5px;
+            }
+
+            & :first-child :last-child {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+        }
+
+        & tbody :last-child {
+            & :first-child {
+                border-radius: 0 0 0 15px;
+            }
+
+            & :last-child {
+                border-radius: 0 0 15px 0;
+            }
+        }
+
+        & td,
+        th {
+            border: 1px solid $FithColor;
+        }
+
+    }
+}

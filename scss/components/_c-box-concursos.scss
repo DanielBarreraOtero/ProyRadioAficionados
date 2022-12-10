@@ -1,0 +1,44 @@
+.c-box-concursos {
+    flex-basis: content;
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 7px;
+    
+    &__titulo {
+        margin-left: 35px;
+        color: $FithColor;
+        font-size: xx-large;
+        font-weight: 700;
+    }
+
+    &__subtitulo {
+        margin: 7px 15px;
+        color: $FithColor--ligth;
+        font-size: x-large;
+        font-weight: 600;
+    }
+    
+    &__box {
+        flex-basis: auto;
+        padding: 5px 5px;
+        background-color: $ThirdColor--dark;
+        border: 4px solid $FithColor;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__row {
+        min-height: 305px;
+        flex-basis: auto;
+        margin: 5px;
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+}

@@ -1,0 +1,11 @@
+.c-main-page {
+    width: 100%;
+    min-height: 90vh;
+    height: auto;
+    background-color: $ThirdColor;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}

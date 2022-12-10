@@ -1,0 +1,115 @@
+.c-concurso-page {
+    width: 100%;
+    height: auto;
+    min-height: 90vh;
+    background-color: $ThirdColor--dark;
+    color: $FithColor;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding-top: 15px;
+
+    &__boxL {
+        @mixin c-concurso-page__boxL {
+            width: 90%;
+            height: auto;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+
+            padding-bottom: 5px;
+            border-bottom: 4px solid $SecondColor;
+        }
+
+        @include c-concurso-page__boxL;
+
+        &--opposite {
+            @mixin c-concurso-page__boxL--opposite {
+                @include c-concurso-page__boxL;
+                justify-content: space-between;
+            }
+
+            @include c-concurso-page__boxL--opposite;
+
+            &--noborders {
+                @include c-concurso-page__boxL--opposite;
+                border: none;
+            }
+        }
+
+        &--noborders {
+            @include c-concurso-page__boxL;
+            border: none;
+        }
+    }
+
+    &__boxM {
+        @mixin c-concurso-page__boxM {
+            width: 45%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+
+            padding-bottom: 5px;
+            border-bottom: 4px solid $SecondColor;
+        }
+
+        @include c-concurso-page__boxM;
+
+        &--noborders {
+            @include c-concurso-page__boxM;
+            border: none;
+        }
+
+        &--right {
+            @mixin c-concurso-page__boxM--right {
+                @include c-concurso-page__boxM;
+                justify-content: flex-end;
+            }
+            @include c-concurso-page__boxM--right;
+
+            &--noborders {
+                @include c-concurso-page__boxM--right;
+                border: none;
+            }
+        }
+    }
+
+    &__banner {
+        width: 90%;
+        height: 250px;
+        background-image: url('../imgs/descarga (2).jfif');
+        background-repeat: round;
+    }
+
+    &__titulo {
+        font-size: xx-large;
+        font-weight: 600;
+    }
+
+    &__time {
+        font-size: x-large;
+        font-weight: 600;
+    }
+
+    &__miembros {
+        font-size: x-large;
+        font-weight: 600;
+    }
+
+    &__desc {
+        font-size: large;
+        font-weight: 600;
+        text-align: justify;
+    }
+
+    &__text {
+        font-size: x-large;
+        font-weight: 600;
+        text-align: justify;
+    }
+}

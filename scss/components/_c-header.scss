@@ -1,0 +1,40 @@
+.c-header{
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $FirstColor;
+
+    border-bottom: 2px solid $SecondColor;
+
+    z-index: 5;
+
+    &__box--center{
+        flex-basis: 33.3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__box--left{
+        flex-basis: 33.3%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: flex-start;
+        align-content: flex-start;
+    }
+
+    &__box--right{
+        flex-basis: 33.3%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+        padding-right: 15px;
+    }
+
+}

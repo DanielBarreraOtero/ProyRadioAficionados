@@ -1,0 +1,54 @@
+//      UTILS
+// funciones
+
+// variables
+@import "utils/colors";
+@import "utils/globals";
+// mixins
+
+
+//      BASE
+// reset
+@import "base/reset";
+// fuentes
+@import "base/fuentes";
+
+//      LAYOUTS
+
+
+//      COMPONENTS
+@import "components/c-modal";
+@import "components/c-burgerButton";
+@import "components/c-header";
+@import "components/c-nav";
+@import "components/c-main-page";
+@import "components/c-mant-concursos";
+@import "components/c-box-concursos";
+@import "components/c-card-concurso";
+@import "components/c-container-login";
+@import "components/c-card-formulario";
+@import "components/c-concurso-page";
+
+//      GENERALES?
+
+body {
+    height: auto;
+    font-family: $FirstFont;
+}
+
+#main-section {
+    margin-top: 10vh;
+    height: 90vh;
+    width: 100%;
+
+    max-width: 100%;
+}
+
+.cuerpo {
+    max-height: 100%;
+    height: 100%;
+}
+
+.id {
+    display: none;
+}
