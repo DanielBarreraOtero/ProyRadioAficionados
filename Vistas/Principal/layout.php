@@ -33,15 +33,15 @@ if (!Login::UsuarioEstaLogueado() && !Login::UsuarioRecordado($con)) {
             <ul class="c-nav__menu">
                 <?php if (Sesion::leer('rol') === 'admin') {
                 ?>
-                    <li><a class="c-nav__link" id="link-mantenimientoConc">Mantenimiento de Concursos</a></li>
-                    <li><a class="c-nav__link" id="link-mantenimientoUsu">Mantenimiento de Usuarios</a></li>
-                    <li><a class="c-nav__link" id="link-mantenimientoBandaModo">Mantenimiento de Bandas y Modos</a></li>
+                    <li><a class="c-nav__link" id="link-mantenimientoConc">⚙️ Concursos</a></li>
+                    <li><a class="c-nav__link" id="link-mantenimientoUsu">⚙️ Usuarios</a></li>
+                    <li><a class="c-nav__link" id="link-mantenimientoBandaModo">⚙️ Bandas y Modos</a></li>
                 <?php
                 } ?>
                 <?php if (Sesion::leer('rol') !== 'guest') {
                 ?>
-                    <li><a class="c-nav__link" id="link-mensajes">Mensajes</a></li>
-                    <li><a class="c-nav__link" id="link-carrera">Mi Carrera</a></li>
+                    <li><a class="c-nav__link" id="link-mensajes">✉️ Mensajes</a></li>
+                    <li><a class="c-nav__link" id="link-carrera">🏁 Mi Carrera</a></li>
                 <?php
                 } ?>
 

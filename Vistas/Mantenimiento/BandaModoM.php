@@ -7,7 +7,7 @@ if (Sesion::leer('rol') !== 'admin') {
 }
 
 ?>
-<button id="c-mant__btnBorrar--modos" style="display: none;">
+<button id="c-mant__btnBorrar--banda-modo" style="display: none;">
     <img src="imgs/papelera.png" style="user-select: none;" width="25px">
 </button>
 <div class="c-mant">
@@ -24,6 +24,7 @@ if (Sesion::leer('rol') !== 'admin') {
                         <th>Distancia</th>
                         <th>Rango Mín</th>
                         <th>Rango Máx</th>
+                        <th>Borrar</th>
                     </tr>
                 </thead>
                 <tbody id="c-mant__table__body--bandas">
