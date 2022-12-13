@@ -66,7 +66,14 @@ class RepPremio
         // Cogemos la propiedades de la clase
         $propiedades = $reflect->getProperties();
         // Le quitamos el id porque la BD lo genera automaticamente
-        unset($propiedades[array_search("id", $propiedades)]);
+        foreach ($propiedades as $propiedad => $valor) {
+            if (
+                $valor->name === "id" || $valor->name === "modo" ||
+                $valor->name === "concurso"
+            ) {
+                unset($propiedades[$propiedad]);
+            }
+        }
 
         $valores = [];
 
@@ -76,10 +83,12 @@ class RepPremio
             if ($propiedad->isInitialized($premio)) {
                 $valor = $metodo->invoke($premio);
 
-                // si es un modo o un concurso cogemos su id
-                if ($nomPropiedad == "modo" || $nomPropiedad == "concurso") {
-                    $valor = $valor->getId();
-                    $nomPropiedad = $nomPropiedad . "_id";
+                if ($nomPropiedad === 'idConcurso') {
+                    $nomPropiedad = 'concurso_id';
+                }
+
+                if ($nomPropiedad === 'idModo') {
+                    $nomPropiedad = 'modo_id';
                 }
 
                 // si es string, lo rodeamos de ''
@@ -91,7 +100,6 @@ class RepPremio
             }
         }
 
-        var_dump($valores);
         $query = "INSERT INTO modo_concurso (" . implode(", ", array_keys($valores)) .
             ") VALUES (" . implode(", ", $valores) . ");";
 

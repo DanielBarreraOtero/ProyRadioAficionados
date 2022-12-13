@@ -2,12 +2,14 @@ window.addEventListener('load', function() {
 
     const tarjetas = this.document.querySelectorAll(".c-card-concurso");
 
+    debugger;
+
     // Programamos el onclick de cada tarjeta
     for (let i = 0; i < tarjetas.length; i++) {
         const tarjeta = tarjetas[i];
-        var id = tarjeta.getAttribute("concid");
-
+        
         tarjeta.addEventListener('click', () => {
+            var id = tarjeta.getAttribute("concid");
             var cuerpo = document.querySelector('#cuerpo');
             var datos = new FormData();
             datos.append("idConcurso",id);
@@ -24,13 +26,5 @@ window.addEventListener('load', function() {
 
         });
 
-        //      HACER QUE CUANDO SE PASE EL RATON POR ENCIMA SE APLIQUEN EFECTOS DE HOVER
-        // tarjeta.addEventListener('mouseover', () => {
-        //     tarjeta.style.backgroundColor = "red";
-        // });
-
-        // tarjeta.addEventListener('mouseout', () => {
-        //     tarjeta.style.backgroundColor = "black";
-        // });
     }
 });

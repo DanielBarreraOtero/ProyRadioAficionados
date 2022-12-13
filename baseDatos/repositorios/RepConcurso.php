@@ -15,6 +15,20 @@ class RepConcurso
         $this->setCon($con);
     }
 
+    public function getNextId()
+    {
+        $query = "SELECT AUTO_INCREMENT FROM information_schema.TABLES
+        WHERE TABLE_SCHEMA = 'radioaficionadosbdnew'
+        AND TABLE_NAME = 'concursos';";
+
+        $resul = $this->con->query($query);
+
+        try {
+            return $resul->fetch(PDO::FETCH_ASSOC)['AUTO_INCREMENT'];
+        } catch (PDOException $e) {
+            throw $e;
+        }
+    }
 
     public function getConcursoByID(int $id)
     {
@@ -23,17 +37,18 @@ class RepConcurso
         $resul = $this->con->query($query);
 
         try {
-            $datos = $resul->fetch(PDO::FETCH_ASSOC);
-            $concurso = new Concurso();
+            if ($datos = $resul->fetch(PDO::FETCH_ASSOC)) {
+                $concurso = new Concurso();
 
-            $datos['idBandas'] = self::getIdBandas($id);
-            $datos['idModos'] = self::getIdModos($id);
-            $datos['idDiplomas'] = self::getIdDiplomas($id);
-            $datos['idParticipaciones'] = self::getIdParticipaciones($id);
-            $datos['idPremios'] = self::getIdPremios($id);
+                $datos['idBandas'] = self::getIdBandas($id);
+                $datos['idModos'] = self::getIdModos($id);
+                $datos['idDiplomas'] = self::getIdDiplomas($id);
+                $datos['idParticipaciones'] = self::getIdParticipaciones($id);
+                $datos['idPremios'] = self::getIdPremios($id);
 
-            $concurso->rellenaConcurso($datos);
-            return $concurso;
+                $concurso->rellenaConcurso($datos);
+                return $concurso;
+            }
         } catch (PDOException $e) {
             throw $e;
         }
@@ -290,11 +305,7 @@ class RepConcurso
 
     public function addConcurso(Concurso $concurso)
     {
-        // INICIAR UNA TRANSACCION PARA ASEGURARNOS DE QUE NO SE 
-        // HAGAN INSERTS DE CONCURSO SI NO SE HAN REALIZADO LOS
-        // INSERTS DE MODO_CONCURSO, BANDA CONCURSO, DIPLOMA O PARTICIPACION
-
-        $this->con->beginTransaction();
+        $concurso->setId(self::getNextId());
 
         $campos = "nombre, `desc`, fechaIniInscrp, fechaFinInscrp,
         fechaIniCon, fechaFinCon";
@@ -311,9 +322,8 @@ class RepConcurso
 
         try {
             $PrepST = $this->con->prepare($query);
-            $PrepST->execute($concurso->toMysqlArray());
+            $resul = $PrepST->execute($concurso->toMysqlArray());
 
-            var_dump($this->getAllConcursos());
             // Añadimos modo-concurso
             $rpPremios = new RepPremio($this->con);
             foreach ($concurso->getPremios() as $premio) {
@@ -337,11 +347,8 @@ class RepConcurso
                 $rpParticipaciones->addParticipacion($participacion);
             }
 
-            $this->con->commit();
+            return $resul;
         } catch (PDOException $e) {
-            // Si se captura algun error durante la transaccion, se vuelve
-            // al estado previo antes de comenzar
-            $this->con->rollBack();
             throw $e;
         }
     }

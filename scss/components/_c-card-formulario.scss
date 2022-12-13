@@ -171,15 +171,23 @@
         border: 2px solid $FithColor--ligth;
         border-radius: 15px;
         align-self: center;
+
+        &:focus{
+            outline: 3px solid $FourthColor;
+        }
     }
 
     &__select{
         height: 80px;
-        width: 100%;
+        width: 110%;
         padding: 5px;
         background-color: $ThirdColor;
         border: 2px solid $FithColor--ligth;
         border-radius: 15px;
+
+        &:focus{
+            outline: 3px solid $FourthColor;
+        }
 
         // Custom Scrollbar
 
@@ -190,6 +198,16 @@
         &::-webkit-scrollbar-thumb {
             border-radius: 10px;
             background-color: $FithColor;
+        }
+
+        &>*{
+            border-radius: 10px;
+            
+        }
+        
+        & > :checked{
+            background-color: $FourthColor;
+            text-align: center;
         }
     }
 
@@ -239,6 +257,76 @@
             background-color: $FithColor;
         }
     }
+
+    &__jueces-box {
+        padding: 7px 7px;
+        background-color: $ThirdColor;
+        border: 2px solid $FithColor--ligth;
+        border-radius: 10px;
+        height: 15vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        text-align: center;
+        
+        display: grid;
+        grid-template-columns: 20% 35% 35% 10%;
+        row-gap: 7px;
+
+        // Custom Scrollbar
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: $FithColor;
+        }
+
+        &__new{
+            grid-row-start: 1;
+            grid-row-end: 1;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            height: 25px;
+        }
+    }
+
+    &__diplomas-box {
+        padding: 7px 7px;
+        background-color: $ThirdColor;
+        border: 2px solid $FithColor--ligth;
+        border-radius: 10px;
+        height: 10vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        text-align: center;
+
+        display: grid;
+        grid-template-columns: 55% 35% 10%;
+        row-gap: 7px;
+
+        // Custom Scrollbar
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: $FithColor;
+        }
+
+        &__new{
+            grid-row-start: 1;
+            grid-row-end: 1;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            height: 25px;
+        }
+    }
+
+    
 }
 
 .--registro {
@@ -259,7 +347,7 @@
 
 .--concurso {
     padding: 15px;
-    width: 100%;
+    width: 70vw;
     height: fit-content;
     background-color: $FirstColor;
     border-radius: 20px;

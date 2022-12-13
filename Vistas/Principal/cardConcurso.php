@@ -74,7 +74,11 @@ class cardConcurso
         if (is_null($conc)) {
             $conc = $rpConc->getConcursoByID($id);
         }
-        $premio = $rpConc->getPremios($conc)[0]->getNombre();
+        if (isset($conc->idPremios)) {
+            $premio = $rpConc->getPremios($conc)[0]->getNombre();
+        } else {
+            $premio = "";
+        }
         $fechaIni = $conc->getFechaIniCon()->format('d/m/Y');
         $fechaFin = $conc->getFechaFinCon()->format('d/m/Y');
         $participantes = $rpConc->getParticipantes($conc->getId());

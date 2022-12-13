@@ -646,13 +646,19 @@ table {
   border-radius: 15px;
   align-self: center;
 }
+.c-card-formulario__date:focus {
+  outline: 3px solid #D4AFB9;
+}
 .c-card-formulario__select {
   height: 80px;
-  width: 100%;
+  width: 110%;
   padding: 5px;
   background-color: #DCE1E9;
   border: 2px solid #565751;
   border-radius: 15px;
+}
+.c-card-formulario__select:focus {
+  outline: 3px solid #D4AFB9;
 }
 .c-card-formulario__select::-webkit-scrollbar {
   width: 5px;
@@ -660,6 +666,13 @@ table {
 .c-card-formulario__select::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #363732;
+}
+.c-card-formulario__select > * {
+  border-radius: 10px;
+}
+.c-card-formulario__select > :checked {
+  background-color: #D4AFB9;
+  text-align: center;
 }
 .c-card-formulario__check--registro {
   margin-top: 1px;
@@ -693,6 +706,60 @@ table {
   border-radius: 10px;
   background-color: #363732;
 }
+.c-card-formulario__jueces-box {
+  padding: 7px 7px;
+  background-color: #DCE1E9;
+  border: 2px solid #565751;
+  border-radius: 10px;
+  height: 15vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 20% 35% 35% 10%;
+  row-gap: 7px;
+}
+.c-card-formulario__jueces-box::-webkit-scrollbar {
+  width: 5px;
+}
+.c-card-formulario__jueces-box::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #363732;
+}
+.c-card-formulario__jueces-box__new {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  height: 25px;
+}
+.c-card-formulario__diplomas-box {
+  padding: 7px 7px;
+  background-color: #DCE1E9;
+  border: 2px solid #565751;
+  border-radius: 10px;
+  height: 10vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 55% 35% 10%;
+  row-gap: 7px;
+}
+.c-card-formulario__diplomas-box::-webkit-scrollbar {
+  width: 5px;
+}
+.c-card-formulario__diplomas-box::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #363732;
+}
+.c-card-formulario__diplomas-box__new {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  height: 25px;
+}
 
 .--registro {
   padding: 25px 15px;
@@ -716,7 +783,7 @@ table {
 
 .--concurso {
   padding: 15px;
-  width: 100%;
+  width: 70vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;

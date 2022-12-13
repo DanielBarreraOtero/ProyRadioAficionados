@@ -25,6 +25,7 @@ if (Sesion::leer('rol') !== 'admin') {
                     <th>Fechas Concurso</th>
                     <th>Nº Participantes</th>
                     <th>Nº Jueces</th>
+                    <th>Borrar</th>
                 </tr>
             </thead>
             <tbody id="c-mant__table__body">
