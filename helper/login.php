@@ -42,7 +42,7 @@ class Login
     private static function ExisteUsuario(PDO $con, string $usuario, string $contrasena): int
     {
         $rpParticipante = new RepParticipante($con);
-        return $rpParticipante->existeParticipante($usuario, $contrasena);
+        return $rpParticipante->estaRegistrado($usuario, $contrasena);
     }
 
     /**

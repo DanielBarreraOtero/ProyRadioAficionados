@@ -1,0 +1,36 @@
+.c-boton {
+    @mixin c-boton {
+        background-color: $FirstColor--dark;
+        padding: 10px 15px;
+        border-radius: 15px;
+        color: $ThirdColor;
+        font-weight: 700;
+    }
+    @include c-boton();
+
+
+    &--secondary {
+        @include c-boton();
+        background-color: transparent;
+        border: 4px solid $FirstColor--dark;
+        color: $FirstColor--dark;
+        font-weight: 800;
+    }
+
+    &--danger {
+        @include c-boton();
+        background-color: rgb(202, 24, 24);
+        border: 3px solid $FithColor;
+        border-radius: 7px;
+        padding: 0;
+    }
+
+    &--new{
+        @include c-boton();
+        background-color: rgb(19, 201, 43);
+        color: $ThirdColor;
+        border: 3px solid $FithColor;
+        border-radius: 7px;
+        padding: 0;
+    }
+}

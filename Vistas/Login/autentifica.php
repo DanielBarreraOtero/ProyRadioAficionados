@@ -66,11 +66,11 @@ if (Login::UsuarioEstaLogueado()) {
             <input type="checkbox" name="recuerdame" class="c-card-formulario__check--registro">
         </div>
         <div class="c-card-formulario__bloqueL">
-            <input type="submit" name="login" value="Iniciar sesión">
+            <input type="submit" name="login" class="c-boton" value="Iniciar sesión">
         </div>
         <p class="c-card-formulario__spacer">- O -</p>
         <div class="c-card-formulario__bloqueL">
-            <input type="submit" name="registro" value="Crear nueva cuenta">
+            <input type="submit" name="registro" class="c-boton" value="Crear nueva cuenta">
         </div>
     </form>
 </div>

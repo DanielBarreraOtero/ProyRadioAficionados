@@ -11,7 +11,8 @@
         </button>
     </div>
     <div class="c-header__box--center">
-        <a class="" href="?">RadioAficionados</a>
+        <img src="imgs/radio-tower.png" alt="peta" class="c-header__logo"> <p class="c-header__titulo">RadioAficionados</p>
+        
     </div>
     <div class="c-header__box--right">
         <?php
@@ -22,7 +23,7 @@
         <?php
         } else {
         ?>
-            <p>¡Bienvenido <?= Sesion::leer("participante")->getIndicativo() ?>!</p>
+            <p>¡Bienvenido <?= Sesion::leer("participante")->getNombre() ?>!</p>
             <p><?= "Rol: ".Sesion::leer("rol") ?></p>
             <a style="text-decoration: none;" href="?menu=cerrarsesion">❌</a>
         <?php

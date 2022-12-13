@@ -19,6 +19,7 @@ if (!Login::UsuarioEstaLogueado() && !Login::UsuarioRecordado($con)) {
     <script src="js/burgerIcon.js"></script>
     <script src="js/navHandler.js"></script>
     <script src="js/mantenimientoConcursos.js"></script>
+    <script src="js/mantenimientoUsuarios.js"></script>
     <script src="js/mantenimientoBandaModo.js"></script>
     <script src="js/pageConcurso.js"></script>
     <script src="js/cardConcursoHandler.js"></script>
@@ -33,15 +34,15 @@ if (!Login::UsuarioEstaLogueado() && !Login::UsuarioRecordado($con)) {
             <ul class="c-nav__menu">
                 <?php if (Sesion::leer('rol') === 'admin') {
                 ?>
-                    <li><a class="c-nav__link" id="link-mantenimientoConc">⚙️ Concursos</a></li>
-                    <li><a class="c-nav__link" id="link-mantenimientoUsu">⚙️ Usuarios</a></li>
-                    <li><a class="c-nav__link" id="link-mantenimientoBandaModo">⚙️ Bandas y Modos</a></li>
+                    <li><a class="c-nav__link" id="link-mantenimientoConc" title="Mantenimiento de Concursos">⚙️ Concursos</a></li>
+                    <li><a class="c-nav__link" id="link-mantenimientoUsu" title="Mantenimiento de Usuarios">⚙️ Usuarios</a></li>
+                    <li><a class="c-nav__link" id="link-mantenimientoBandaModo" title="Mantenimiento de Bandas y Modos">⚙️ Bandas y Modos</a></li>
                 <?php
                 } ?>
                 <?php if (Sesion::leer('rol') !== 'guest') {
                 ?>
-                    <li><a class="c-nav__link" id="link-mensajes">✉️ Mensajes</a></li>
-                    <li><a class="c-nav__link" id="link-carrera">🏁 Mi Carrera</a></li>
+                    <li><a class="c-nav__link" id="link-mensajes" title="Mis Mensajes">✉️ Mis Mensajes</a></li>
+                    <li><a class="c-nav__link" id="link-carrera" title="Mi Carrera">🏁 Mi Carrera</a></li>
                 <?php
                 } ?>
 

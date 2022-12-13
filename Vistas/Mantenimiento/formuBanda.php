@@ -32,7 +32,7 @@ if (isset($_GET['modo']) && $_GET['modo'] === 'edita') {
         </div>
         <div class="c-card-formulario__bloqueL--row">
             <div class="c-card-formulario__bloqueS">
-                <input type="submit" name="enviar" value="Aceptar" id="c-card-formulario__btnAceptar--modo">
+                <input type="submit" name="enviar" value="Aceptar" class="c-boton" id="c-card-formulario__btnAceptar--modo">
             </div>
         </div>
     </div>

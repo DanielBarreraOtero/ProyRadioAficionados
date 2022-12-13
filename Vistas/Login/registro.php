@@ -122,8 +122,8 @@ if (Login::UsuarioEstaLogueado()) {
             ?>
         </div>
         <div class="c-card-formulario__bloqueBtn">
-            <input type="submit" name="cancelar" value="Cancelar">
-            <input type="submit" name="continuar" value="Continuar">
+            <input type="submit" name="cancelar" class="c-boton--secondary" value="Cancelar">
+            <input type="submit" name="continuar" class="c-boton" value="Continuar">
         </div>
     </form>
 </div>

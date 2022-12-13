@@ -14,7 +14,7 @@ if (isset($_GET['modo']) && $_GET['modo'] === 'edita') {
             <span class="c-card-formulario__error" id="error-modo-nombre" style="display: none;"></span>
         </div>
         <div class="c-card-formulario__bloqueM">
-            <input type="submit" name="enviar" value="Aceptar" id="c-card-formulario__btnAceptar--modo">
+            <input type="submit" name="enviar" value="Aceptar" class="c-boton" id="c-card-formulario__btnAceptar--modo">
         </div>
     </div>
 </form>

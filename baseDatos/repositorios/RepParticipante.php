@@ -128,7 +128,7 @@ class RepParticipante
         }
     }
 
-    public function existeParticipante(string $email, string $contrasena): int
+    public function estaRegistrado(string $email, string $contrasena): int
     {
         $query = "SELECT id FROM participantes WHERE email = '$email' AND password = '$contrasena'";
 
@@ -138,6 +138,21 @@ class RepParticipante
             $resul = $resul->fetch(PDO::FETCH_ASSOC);
 
             return (isset($resul['id'])) ? $resul['id'] : 0;
+        } catch (PDOException $e) {
+            throw $e;
+        }
+    }
+
+    public function existeParticipante(string $indicativo)
+    {
+        $query = "SELECT id FROM participantes WHERE indicativo = '$indicativo'";
+
+        try {
+            $resul = $this->con->query($query);
+
+            $resul = $resul->fetch(PDO::FETCH_ASSOC);
+
+            return (isset($resul['id'])) ? true : false;
         } catch (PDOException $e) {
             throw $e;
         }

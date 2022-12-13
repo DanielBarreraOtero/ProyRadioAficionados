@@ -56,12 +56,20 @@
     &__newBtn{
         align-self: flex-end;
         margin-right: 2%;
+        width: 90px;
+        height: 35px;
+        font-size: medium;
     }
 
     &__btnBorrar{
         width: 80px;
-        background-color: red;
-        border-radius: 5px;
+        height: 35px;
+    }
+
+    &__titulo{
+        font-size: x-large;
+        font-weight: 700;
+        color: $FithColor;
     }
 
     &__table {

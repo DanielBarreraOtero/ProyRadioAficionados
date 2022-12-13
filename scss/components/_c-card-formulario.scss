@@ -9,23 +9,70 @@
         text-align: center;
         margin-bottom: 15px;
         color: $FithColor;
+        font-weight: 600;
+        font-size: x-large;
     }
-
 
     &__spacer {
         flex: 1 1 100%;
         text-align: center;
         margin: 7px;
         color: $FithColor;
+        font-size: large;
+        font-weight: 800;
+        color: $FithColor--ligth;
     }
 
+    &__subtitulo {
+        flex: 1 1 100%;
+        text-align: center;
+        margin: 7px;
+        color: $FithColor;
+        font-size: large;
+        font-weight: 700;
+        color: $FithColor;
+    }
+    
     &__bloqueM {
-        flex-basis: 40%;
-        display: flex;
-        flex-direction: column;
-        align-content: space-around;
-        gap: 4px;
-        margin: 5px 0;
+        @mixin c-card-formulario__bloqueM {
+
+            flex-basis: 40%;
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            gap: 4px;
+            margin: 5px 0;
+        }
+
+        @include c-card-formulario__bloqueM();
+
+        &--row {
+            @include c-card-formulario__bloqueM();
+            flex-direction: row;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__bloqueXM {
+        @mixin c-card-formulario__bloqueXM {
+
+            flex-basis: 60%;
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            gap: 4px;
+            margin: 5px 0;
+        }
+
+        @include c-card-formulario__bloqueXM();
+
+        &--row {
+            @include c-card-formulario__bloqueXM();
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 25px;
+        }
     }
 
     &__bloqueS {
@@ -38,7 +85,7 @@
     }
 
     &__bloqueL {
-        @mixin c-card-formulario__bloqueL{
+        @mixin c-card-formulario__bloqueL {
             flex-basis: 80%;
             display: flex;
             flex-direction: column;
@@ -46,6 +93,7 @@
             gap: 4px;
             margin: 10px 0;
         }
+
         @include c-card-formulario__bloqueL;
 
         &--row {
@@ -54,6 +102,14 @@
             justify-content: center;
             align-items: baseline;
             gap: 15px;
+        }
+
+        &--row--radius {
+            @include c-card-formulario__bloqueL;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
     }
 
@@ -77,27 +133,64 @@
     &__input {
 
         &--registro {
-            height: 30px;
-            background-color: $ThirdColor;
-            border: 2px solid $FithColor--ligth;
-            border-radius: 15px;
+            @mixin c-card-formulario__input--registro{
+                height: 30px;
+                background-color: $ThirdColor;
+                border: 2px solid $FithColor--ligth;
+                border-radius: 15px;
+                padding: 0 10px;
+            }
+            @include c-card-formulario__input--registro();
+            
+            &:focus {
+                @include c-card-formulario__input--registro();
+                outline: 3px solid $FourthColor;
+            }
         }
     }
-
+    
     &__tArea {
+        vertical-align: top;
         height: 150px;
         background-color: $ThirdColor;
         border: 2px solid $FithColor--ligth;
         border-radius: 15px;
+        
+        &:focus{
+            outline: 3px solid $FourthColor;
+        }
     }
 
     &__date {
+        margin-top: 3px;
+        margin-bottom: 3px;
         height: 30px;
-        width: 45%;
+        width: 75%;
         text-align: center;
         background-color: $ThirdColor;
         border: 2px solid $FithColor--ligth;
         border-radius: 15px;
+        align-self: center;
+    }
+
+    &__select{
+        height: 80px;
+        width: 100%;
+        padding: 5px;
+        background-color: $ThirdColor;
+        border: 2px solid $FithColor--ligth;
+        border-radius: 15px;
+
+        // Custom Scrollbar
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: $FithColor;
+        }
     }
 
     &__check {
@@ -107,45 +200,107 @@
         }
     }
 
+    &__radius {
+        height: 20px;
+        width: 20px;
+    }
+
     &__label {
 
         &--registro {
             color: $FithColor;
+            padding-left: 10px;
+            font-weight: 500;
+            font-size: large;
+        }
+    }
+
+    &__participaciones-box {
+        padding: 15px 7px;
+        background-color: $ThirdColor;
+        border: 2px solid $FithColor--ligth;
+        border-radius: 10px;
+        height: 20vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        display: grid;
+        grid-template-columns: 80% 20%;
+        row-gap: 7px;
+
+        // Custom Scrollbar
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: $FithColor;
         }
     }
 }
 
 .--registro {
-    padding: 15px;
+    padding: 25px 15px;
     width: 40%;
     height: fit-content;
     background-color: $ThirdColor--dark;
+    border-radius: 20px;
 }
 
 .--login {
-    padding: 15px;
+    padding: 25px 15px;
     width: 30%;
     height: fit-content;
     background-color: $ThirdColor--dark;
+    border-radius: 20px;
 }
 
 .--concurso {
     padding: 15px;
-    width: 60%;
+    width: 100%;
     height: fit-content;
     background-color: $FirstColor;
+    border-radius: 20px;
 }
 
 .--modo {
     padding: 25px;
+    padding-bottom: 5px;
     width: fit-content;
     height: fit-content;
     background-color: $FirstColor;
+    border-radius: 20px;
 }
 
 .--banda {
     padding: 25px;
+    padding-bottom: 5px;
     width: 60%;
     height: fit-content;
     background-color: $FirstColor;
+    border-radius: 20px;
+}
+
+.--usuario {
+    padding: 35px;
+    padding-bottom: 5px;
+    width: 70%;
+    height: fit-content;
+    background-color: $FirstColor;
+    border-radius: 20px;
+}
+
+
+
+#c-card-formulario__form--banda {
+    display: flex;
+    justify-content: center;
+}
+
+#c-card-formulario__form--usuario {
+    display: flex;
+    width: 70%;
+    justify-content: center;
 }

@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
     
     // controla que si se clicka fuera de el nav se cierre el menu
     cuerpo.addEventListener("click", () => {
-        if (btn.ariaExpanded === "true") {
+        if (btn.getAttribute('aria-expanded') === "true") {
             animacionBtn(btn, lineas);
             animacionNav(nav, btn);
         }
@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
     // controla que si se clicka en alguno de los links se cierre el menu
     links.forEach(link => {
         link.addEventListener("click", () => {
-            if (btn.ariaExpanded === "true") {
+            if (btn.getAttribute('aria-expanded') === "true") {
                 animacionBtn(btn, lineas);
                 animacionNav(nav, btn);
             }
@@ -35,7 +35,7 @@ window.addEventListener("load", function () {
 
 function animacionBtn(btn, lineas) {
     // Si esta cerrado
-    if (btn.ariaExpanded === "false") {
+    if (btn.getAttribute('aria-expanded') === "false") {
         for (let i = 0; i < lineas.length; i++) {
             // a cada linea se le da su variante de pulsado, se le cambia
             // el tamaño y se la mueve al centro
@@ -43,7 +43,7 @@ function animacionBtn(btn, lineas) {
             lineas[i].width.baseVal.value = 15;
             lineas[i].x.baseVal.value = 42.5;
         }
-        btn.ariaExpanded = "true";
+        btn.setAttribute('aria-expanded', "true");
         // Si esta abierto
     } else {
         for (let i = 0; i < lineas.length; i++) {
@@ -52,13 +52,13 @@ function animacionBtn(btn, lineas) {
             lineas[i].width.baseVal.value = 80;
             lineas[i].x.baseVal.value = 10;
         }
-        btn.ariaExpanded = "false";
+        btn.setAttribute('aria-expanded', "false");
     }
 }
 
 function animacionNav(nav, btn) {
 
-    if (btn.ariaExpanded === "false") {
+    if (btn.getAttribute('aria-expanded') === "false") {
         // Si se va a cerrar, le quitamos la clase para que haga la transicion de cerrar
         nav.classList.toggle('c-nav--abierto');
         // esperamos 500ms a que se realice y despues le hacemos display none para que no se pueda seleccionar con el tabulador

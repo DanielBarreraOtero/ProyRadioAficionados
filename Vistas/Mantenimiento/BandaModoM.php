@@ -7,15 +7,15 @@ if (Sesion::leer('rol') !== 'admin') {
 }
 
 ?>
-<button id="c-mant__btnBorrar--banda-modo" style="display: none;">
+<button id="c-mant__btnBorrar--banda-modo" class="c-boton--danger" style="display: none;">
     <img src="imgs/papelera.png" style="user-select: none;" width="25px">
 </button>
 <div class="c-mant">
     <div class="c-mant__boxL--row">
         <div class="c-mant__boxBandas">
             <div class="c-mant__boxL--row--opposite">
-                <p>Bandas</p>
-                <button class="c-mant__newBtn" id="c-mant__newBtn--bandas">+ Nuevo</button>
+                <p class="c-mant__titulo">Bandas</p>
+                <button class="c-boton--new c-mant__newBtn" id="c-mant__newBtn--bandas">+ Nuevo</button>
             </div>
             <table class="c-mant__table">
                 <thead>
@@ -34,8 +34,8 @@ if (Sesion::leer('rol') !== 'admin') {
 
         <div class="c-mant__boxModos">
             <div class="c-mant__boxL--row--opposite">
-                <p>Modos</p>
-                <button class="c-mant__newBtn" id="c-mant__newBtn--modos">+ Nuevo</button>
+                <p class="c-mant__titulo">Modos</p>
+                <button class="c-boton--new c-mant__newBtn" id="c-mant__newBtn--modos">+ Nuevo</button>
             </div>
             <table class="c-mant__table">
                 <thead>

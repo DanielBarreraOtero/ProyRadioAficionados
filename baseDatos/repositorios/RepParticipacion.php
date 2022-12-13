@@ -76,6 +76,23 @@ class RepParticipacion
         return false;
     }
 
+    public function getConcurso(Participacion $participacion)
+    {
+        // si ya tiene concurso se lo devolvemos
+        if (isset($participacion->concurso)) {
+            return $participacion->getConcurso();
+        }
+        
+        // si tiene su id lo buscamos en la base de datos y lo devolvemos
+        if ($participacion->getIdConcurso()) {
+            $rpConc = new RepConcurso($this->con);
+            return $rpConc->getConcursoByID($participacion->getIdConcurso());
+        }
+
+        // si no tiene ningun concurso asignado devolvemos false
+        return false;
+    }
+
     /**
      * Pide a la base de datos todos los mensajes de una participacion.\
      */
